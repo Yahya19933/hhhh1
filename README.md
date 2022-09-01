@@ -5,9 +5,9 @@ Installing and configuring robot arm package on ROS
 
 After installing ROS in Ubuntu you need these steps to install arm package
 
-Ubuntu version: 20.04.4
+* Ubuntu version: 20.04.4
 
-ROS version: Noetic
+* ROS version: Noetic
 
 
 ### Create a workspase with Catkin
