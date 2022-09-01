@@ -2,7 +2,12 @@
 Installing and configuring arm package on ROS
 
 ## Description
+
 After installing ROS in Ubuntu you need these steps to install arm package
+
+Ubuntu version: 20.04.4
+ROS version: Noetic
+
 ### Create a workspase with Catkin
 ```
  source /opt/ros/noetic/setup.bash
@@ -33,26 +38,28 @@ Now your ROS workspace is ready to have packages installed in it
  sudo apt-get install ros-noetic-ros-controllers ros-noetic-ros-control
 ```
 
-3.Go to bashrc folder and do the following 
+3. This final command will compile all packages in your src folder
+```
+ catkin_make
+```
+
+
+4.Go to bashrc folder and do the following 
 on terminal
 ```
  sudo nano ~/.bashrc
 
 // at the end of the (bashrc) file add the follwing line:
 
-source /home/*username/catkin_pr/devel/setup.bash
+source /home/*username/catkin_ws/devel/setup.bash
 
 //after that click on ctrl + o then ctrl+ x to back to terminal and type 
 
 source ~/.bashrc
 ```
-make sure to change the username as your username
-
+make sure to switche *username* with your local username
  
-4. This final command will compile all packages in your src folder
-```
- catkin_make
-```
+
 
 ## Configuring Arduino with ROS
 1. Install [Arduino IDE](https://www.arduino.cc/en/software) in Ubuntu 
@@ -65,23 +72,39 @@ make sure to change the username as your username
 
 
 ## Simulation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-These commands will add the ardunino robot arm package to the src folder
+### Controlling the robot arm by joint_state_publisher
 ```
- cd catkin_ws/src/
- sudo apt install git
- git clone https://github.com/smart-methods/arduino_robot_arm
+roslaunch robot_arm_pkg check_motors.launch
+```
+
+![joint_state_publisher](https://user-images.githubusercontent.com/90250848/187865524-914b03c4-3ffd-4130-b6bb-caf1b1647d4f.jpg)
+
+You can also connect with hardware by running
+```
+rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
+```
+
+## Controlling the robot arm by  gazebo
+```
+roslaunch robot_arm_pkg check_motors_gazebo.launch
+```
+
+![Gazebo](https://user-images.githubusercontent.com/90250848/187865554-4ff040f9-6758-44e2-a8cc-81f7b91d5c3a.png)
+
+You can also connect with hardware by running
+```
+rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
+```
+
+
+## Controlling the robot arm by movelet
+```
+roslaunch moveit_pkg demo.launch
+```
+
+![movelet](https://user-images.githubusercontent.com/90250848/187865613-a46b7508-8f88-4271-9ee1-3dfcbad46cd0.png)
+
+You can also connect with hardware by running
+```
+rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
 ```
