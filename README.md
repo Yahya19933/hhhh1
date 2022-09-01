@@ -1,5 +1,5 @@
 # Arduino-Robot-Arm-Installation-on-ROS
-Installing and configuring arm package on ROS
+Installing and configuring robot arm package on ROS
 
 ## Description
 
