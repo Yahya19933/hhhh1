@@ -49,17 +49,24 @@ Now your ROS workspace is ready to have packages installed in it
 4.Go to bashrc folder and do the following 
 on terminal
 ```
- sudo nano ~/.bashrc
+gedit ~/.bashrc
+```
 
-// at the end of the (bashrc) file add the follwing line:
+It will open file at the end of the file add the follwing line:
 
-source /home/*username/catkin_ws/devel/setup.bash
+```
+source /home/**username**/catkin_ws/devel/setup.bash
+```
+![Screenshot from 2023-07-17 17-06-08](https://github.com/ya77ya/Arduino-Robot-Arm-Installation-on-ROS/assets/90250848/7add282c-549f-41b8-8969-005a43931490)
 
-//after that click on ctrl + o then ctrl+ x to back to terminal and type 
+make sure to switche **username** with your local username
 
+
+After that save it and back to terminal and type 
+
+```
 source ~/.bashrc
 ```
-make sure to switche *username* with your local username
  
 
 
