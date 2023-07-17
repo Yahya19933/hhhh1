@@ -24,7 +24,7 @@ Now your ROS workspace is ready to have packages installed in it
 ### Installing Arduino Robot Arm Package
 1. These commands will add the ardunino robot arm package to the src folder
 ```
- cd catkin_ws/src/
+ cd ~/catkin_ws/src/
  sudo apt install git
  git clone https://github.com/smart-methods/arduino_robot_arm
 ```
@@ -32,7 +32,7 @@ Now your ROS workspace is ready to have packages installed in it
 
 2. These commands will install all the necessary dependencies
 ```
- cd catkin_ws
+ cd ~/catkin_ws
  rosdep install --from-paths src --ignore-src -r -y
  sudo apt-get install ros-noetic-moveit
  sudo apt-get install ros-noetic-joint-state-publisher ros-noetic-joint-state-publisher-gui
